@@ -1,0 +1,50 @@
+{
+  "name": "postcss-mq",
+  "version": "0.0.1-0",
+  "description": "PostCSS plugin to get rid of unnecessary media queries",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lttb/postcss-mq.git"
+  },
+  "author": "Kenzhaev Artur",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lttb/postcss-mq/issues"
+  },
+  "homepage": "https://github.com/lttb/postcss-mq#readme",
+  "scripts": {
+    "clean": "rimraf lib",
+    "prebuild": "npm run clean",
+    "build": "BABEL_ENV=production babel src --ignore '**/tests/**' --out-dir lib",
+    "lint": "yarn lint:eslint",
+    "lint:eslint": "eslint .",
+    "test": "jest",
+    "preversion": "yarn lint",
+    "version": "yarn build",
+    "postversion": "git push --follow-tags && npm publish",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": "./node_modules/.bin/eslint"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.0.0-beta.42",
+    "postcss": "^6.0.20"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.42",
+    "@babel/core": "^7.0.0-beta.42",
+    "@babel/plugin-transform-runtime": "^7.0.0-beta.42",
+    "@babel/preset-env": "^7.0.0-beta.42",
+    "babel-eslint": "^8.2.2",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.9.0",
+    "husky": "^0.14.3",
+    "jest": "^22.4.3",
+    "lint-staged": "^7.0.0",
+    "rimraf": "^2.6.2",
+    "strip-indent": "^2.0.0"
+  }
+}
