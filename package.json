@@ -1,6 +1,6 @@
 {
   "name": "postcss-mq",
-  "version": "0.0.0",
+  "version": "0.0.1-0",
   "description": "PostCSS plugin to get rid of unnecessary media queries",
   "main": "lib/index.js",
   "repository": {
